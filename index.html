@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="calculator">
+
+        <!-- Top Status Bar -->
+        <div class="status-bar">
+            <span id="clock">12:00 PM</span>
+
+            <div class="battery">
+                <i class="fa-solid fa-battery-three-quarters"></i>
+                <span id="battery-level">78%</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+
+            <div class="header-text">
+                <h1>Scientific Calculator</h1>
+                <p>Calculate · Explore · Achieve</p>
+            </div>
+
+            <button class="settings-btn" aria-label="Settings" onclick="toggleSettings()">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+        </header>
+
+        <!-- Calculator Display -->
+        <section class="display">
+            <div class="angle-modes">
+                <button class="angle-btn active" data-angle="DEG">DEG</button>
+                <button class="angle-btn" data-angle="RAD">RAD</button>
+                <button class="angle-btn" data-angle="GRAD">GRAD</button>
+            </div>
+
+            <div id="history" class="history"></div>
+            <div id="result" class="result" aria-live="polite">0</div>
+        </section>
+
+        <!-- Calculator Mode -->
+        <div class="mode-switch">
+            <button class="mode-btn active" data-mode="scientific">
+                <i class="fa-solid fa-calculator"></i>
+                Scientific
+            </button>
+
+            <button class="mode-btn" data-mode="standard">
+                <i class="fa-solid fa-border-all"></i>
+                Standard
+            </button>
+        </div>
+
+        <!-- Scientific Buttons -->
+        <section class="scientific-keys keys">
+            <button data-action="func" data-value="sin">sin</button>
+            <button data-action="func" data-value="cos">cos</button>
+            <button data-action="func" data-value="tan">tan</button>
+            <button data-action="func" data-value="log">log</button>
+            <button data-action="func" data-value="ln">ln</button>
+
+            <button data-action="func" data-value="square">x²</button>
+            <button data-action="func" data-value="cube">x³</button>
+            <button data-action="operator" data-value="^">xʸ</button>
+            <button data-action="func" data-value="sqrt">√</button>
+            <button data-action="func" data-value="cbrt">∛</button>
+
+            <button data-action="constant" data-value="pi">π</button>
+            <button data-action="constant" data-value="e">e</button>
+            <button data-action="input" data-value="(">(</button>
+            <button data-action="input" data-value=")">)</button>
+            <button data-action="operator" data-value="%">%</button>
+        </section>
+
+        <!-- Number Pad -->
+        <section class="number-keys keys">
+            <button class="clear" data-action="clear">AC</button>
+            <button data-action="delete" aria-label="Delete">
+                <i class="fa-solid fa-delete-left"></i>
+            </button>
+            <button data-action="sign">+/−</button>
+            <button class="operator" data-action="operator" data-value="/">÷</button>
+
+            <button data-action="input" data-value="7">7</button>
+            <button data-action="input" data-value="8">8</button>
+            <button data-action="input" data-value="9">9</button>
+            <button class="operator" data-action="operator" data-value="*">×</button>
+
+            <button data-action="input" data-value="4">4</button>
+            <button data-action="input" data-value="5">5</button>
+            <button data-action="input" data-value="6">6</button>
+            <button class="operator" data-action="operator" data-value="-">−</button>
+
+            <button data-action="input" data-value="1">1</button>
+            <button data-action="input" data-value="2">2</button>
+            <button data-action="input" data-value="3">3</button>
+            <button class="operator" data-action="operator" data-value="+">+</button>
+
+            <button class="zero" data-action="input" data-value="0">0</button>
+            <button data-action="decimal">.</button>
+            <button class="operator" data-action="equals">=</button>
+        </section>
+
+        <!-- Settings Panel -->
+        <div id="settings-panel" class="settings-panel hidden">
+            <h3>Calculator Settings</h3>
+            <p>Choose your preferred calculator mode above.</p>
+            <button onclick="toggleSettings()">Close</button>
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
